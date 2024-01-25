@@ -37,12 +37,9 @@
     font-weight: 500;
     margin-top: 2px;
 }
-#detail #soLuong{
-    width: 200px;
-    border-radius: 20px;
-}
-#detail .group-btn{
-    margin-top: 30px;
+
+.detail .group-btn{
+    margin-top: 75px;
     margin-left: 20px;
 }
 #detail .description h6{

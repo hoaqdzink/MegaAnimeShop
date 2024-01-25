@@ -24,25 +24,33 @@ public class LoginServlet extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = CookieUtils.get("username", request);
-		User user = new UserDao().findByUsername(username);
-		
-		HttpSession session = request.getSession();
-		
-		
-		if(SessionUtils.isLogin(request)) {
-			session.setAttribute("name", user.getFullname());
-			session.setAttribute("role", user.getRole().getPosition());
-			response.sendRedirect(request.getContextPath() + "/home");
-			return;
-		}else if (username == null) {
-			request.setAttribute("isLogin", false);
-			request.getRequestDispatcher("/layout/login/login.jsp").forward(request, response);
-			return;
-		}
-		SessionUtils.add(request, "username", username);
-		PageInfo.prepareAndForwardIndex(request, response, PageType.INDEX_HOME_PAGE);
+	    String username = CookieUtils.get("username", request);
+	    HttpSession session = request.getSession();
+
+	    if (username == null) {
+	        // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+	        request.setAttribute("isLogin", false);
+	        request.getRequestDispatcher("/layout/login/login.jsp").forward(request, response);
+	        return;
+	    }
+
+	    User user = new UserDao().findByUsername(username);
+
+	    if (SessionUtils.isLogin(request)) {
+	        // Người dùng đã đăng nhập, thiết lập các thuộc tính của phiên
+	        session.setAttribute("name", user.getFullname());
+	        session.setAttribute("role", user.getRole().getPosition());
+	        session.setAttribute("avatar", user.getAvatar());
+	        response.sendRedirect(request.getContextPath() + "/home");
+	        return;
+	    } else {
+	        // Người dùng chưa đăng nhập, thực hiện các hành động khác nếu cần
+	        SessionUtils.add(request, "username", username);
+	        PageInfo.prepareAndForwardIndex(request, response, PageType.INDEX_HOME_PAGE);
+	        return;
+	    }
 	}
+
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -66,12 +74,13 @@ public class LoginServlet extends HttpServlet {
 				if(login.isRemember()) {
 					CookieUtils.add("username", login.getUsername(), 24, response);
 				}else {
-					CookieUtils.add("username", login.getUsername(), 0, response);
+					CookieUtils.add("username", login.getUsername(), 1, response);
 				}
 				request.setAttribute("isLogin", true);
 				
 				session.setAttribute("name", user.getFullname());
 				session.setAttribute("role", user.getRole().getPosition());
+				session.setAttribute("avatar", user.getAvatar());
 				response.sendRedirect(request.getContextPath() + "/home");
 				return;
 			}
@@ -84,6 +93,17 @@ public class LoginServlet extends HttpServlet {
 		request.getRequestDispatcher("/layout/login/login.jsp").forward(request, response);
 	}
 	
-	
+	protected void requestSessionForUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String username = (String) request.getSession().getAttribute("username");
+		if(username!=null) {
+
+			UserDao dao = new UserDao();
+			User user = dao.findByUsername(username);
+			session.setAttribute("name", user.getFullname());
+			session.setAttribute("role", user.getRole().getPosition());
+			session.setAttribute("avatar", user.getAvatar());
+		}
+	}
 
 }

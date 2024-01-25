@@ -14,7 +14,7 @@
                     <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
                   
                     <div class="image-upload-wrap" style="${imageWrap}">
-                      <input class="file-upload-input"name="images" type='file' onchange="readURL(this);" accept="image/*" />
+                      <input class="file-upload-input" name="images" type='file' onchange="readURL(this);" accept="image/*" />
                       <div class="drag-text">
                         <h3>+</h3>
                       </div>

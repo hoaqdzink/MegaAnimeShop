@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/WebShopMegaAnime/">
     <title>${page.title }</title>
+    <link rel="icon" href="./images/login/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/admin/admin.css">
@@ -24,7 +25,7 @@
             <!-- Content For Sidebar -->
             <div class="h-100">
                 <div class="sidebar-logo">
-                    <a href="#">Mega Shop</a>
+                    <a href="home">Mega Shop</a>
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
@@ -71,16 +72,39 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Thêm tài khoản</a>
+                                <a href="admin/admin-user" class="sidebar-link">Thêm tài khoản</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Xem danh sách tài khoản </a>
+                                <a href="admin/list-users?page=1" class="sidebar-link">Xem danh sách tài khoản </a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Thêm chức vụ</a>
+                                <a href="admin/roles" class="sidebar-link">Thêm chức vụ</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#order" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fas fa-shopping-cart"></i>
+                             Đơn hàng
+                        </a>
+                        <ul id="order" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link"> Tất cả đơn hàng</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Danh sách chức vụ</a>
+                                <a href="#" class="sidebar-link"> Chờ duyệt</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link"> Đang xử lý</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link"> Đang Giao</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link"> Đã Giao</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link"> Đã Hủy</a>
                             </li>
                         </ul>
                     </li>
@@ -119,12 +143,13 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="./images/profile.jpg" class="avatar img-fluid rounded" alt="">
+                                <img src="./images/user/${avatar }" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
+                            	<h6 class="text-center p-2" style="color: red; font-weight: bold;">${name}</h6>
                                 <a href="#" class="dropdown-item">Profile</a>
                                 <a href="#" class="dropdown-item">Setting</a>
-                                <a href="#" class="dropdown-item">Logout</a>
+                                <a href="logout" class="dropdown-item">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -157,7 +182,7 @@
                                     <a href="#" class="text-muted">Liên hệ</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Xem sản phẩm</a>
+                                    <a href="admin/list-products?page=1" class="text-muted">Xem sản phẩm</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted">Thống kê</a>
@@ -171,6 +196,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-4s0geq5m1RgSm8g5rl5eA5M6N2w2O7i+y2B5G5B6XztEJlLUNM5EaRj2iX2Btk6M" crossorigin="anonymous"></script>
     <script src="./js/admin.js"></script>
     <script src="./js/upfile.js"></script>
 </body>

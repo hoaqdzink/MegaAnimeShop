@@ -14,13 +14,23 @@ public class PageInfo {
     static {
         pageRoute.put(PageType.INDEX_HOME_PAGE, new PageInfo("Mega Shop", "#", "/layout/site/_contentIndex.jsp"));
         pageRoute.put(PageType.INDEX_PRODUCTS_PAGE, new PageInfo("Product Mega", "./css/site/product.css", "/layout/site/_product.jsp"));
+        pageRoute.put(PageType.INDEX_PRODUCT_CATEGORI_PAGE, new PageInfo("Product Mega", "./css/site/product.css", "/layout/site/_productMegaAnime.jsp"));
         pageRoute.put(PageType.INDEX_DETAIL_PAGE, new PageInfo("Detail Mega", "./css/site/detail.css", "/layout/site/_detail.jsp"));
         pageRoute.put(PageType.INDEX_INVOICES_PAGE, new PageInfo("Invoices Mega", "./css/site/invoices.css", "/layout/site/_invoices.jsp"));
+        pageRoute.put(PageType.INDEX_SUCCESS_PAGE, new PageInfo("Đặt hàng thành công", "#", "/layout/site/_success.jsp"));
+        pageRoute.put(PageType.INDEX_STTODER_PAGE, new PageInfo("Trạng thái đơn hàng", "#", "/layout/site/_sttOrder.jsp"));
+        pageRoute.put(PageType.INDEX_HISTORY_ORDER_PAGE, new PageInfo("Lịch sử đặt hàng", "#", "/layout/site/_historyOrder.jsp"));
+        pageRoute.put(PageType.INDEX_CART_PAGE, new PageInfo("Giỏ hàng", "#", "/layout/site/_cart.jsp"));
+        pageRoute.put(PageType.INDEX_FAVORITE_PAGE, new PageInfo("Sản phẩm yêu thích", "#", "/layout/site/_favorite.jsp"));
+        pageRoute.put(PageType.INDEX_CHANGE_INFORMATION_PAGE, new PageInfo("Thay đổi thông tin", "./css/site/infor.css", "/layout/site/_changeInfor.jsp"));
+        pageRoute.put(PageType.INDEX_CHANGE_PASSWORD_PAGE, new PageInfo("Thay đổi mật khẩu", "./css/site/infor.css", "/layout/site/_changePass.jsp"));
         
         pageRoute.put(PageType.ADMIN_HOME_PAGE, new PageInfo("Admin Mega", "#", "/layout/admin/_main.jsp"));
         pageRoute.put(PageType.ADMIN_PRODUCT_PAGE, new PageInfo("Product Admin", "./css/admin/adProduct.css", "/layout/admin/_product.jsp"));
         pageRoute.put(PageType.ADMIN_LIST_PRODUCT_PAGE, new PageInfo("Danh sách sản phẩm Mega", "#", "/layout/admin/_tableProduct.jsp"));
-    
+        pageRoute.put(PageType.ADMIN_USERS_PAGE, new PageInfo("User Admin", "./css/admin/adUser.css", "/layout/admin/_user.jsp"));
+        pageRoute.put(PageType.ADMIN_LIST_USER_PAGE, new PageInfo("Danh sách tài khoản", "#", "/layout/admin/_tableUsers.jsp"));
+        pageRoute.put(PageType.ADMIN_ROLE_USER_PAGE, new PageInfo("Danh sách các chức vụ", "#", "/layout/admin/_role.jsp"));
     }
 
     // Chuẩn bị và chuyển hướng đến trang

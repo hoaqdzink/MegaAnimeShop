@@ -29,16 +29,16 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			DateTimeConverter dtc = new DateConverter(new Date());
-			dtc.setPattern("dd/MM/yyyy");
+			dtc.setPattern("yyyy-MM-dd");
 			ConvertUtils.register(dtc, Date.class);
 
 			User user = new  User();
 			RoleDao roleDao = new RoleDao(); // Thay RoleDao bằng class quản lý Role của bạn
 			Role role = roleDao.findById(2); // 1 là ID của Role muốn set
-			
+			System.out.println(role);
 			BeanUtils.populate(user, request.getParameterMap());
 			
-			user.setAvatar("./images/login/user.png");
+			user.setAvatar("/profile.jpg");
 			user.setCreateDate(new Date());
 			user.setRole(role);
 			

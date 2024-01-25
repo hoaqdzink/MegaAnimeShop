@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
  <!-- Giới thiệu mô hình begin -->
 <section id="introduce" class="introduce">
    <div class="introduceText text-center">
@@ -253,155 +256,56 @@
             <h1>Sản phẩm <span>Pokemon</span></h1>
         </div>
         <div class="row g-2 bestsellerCard">
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon1.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon2.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon3.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon4.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon5.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon6.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pikachu.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/pokemon1.jpg" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <c:forEach var="pokemon" begin="0" end="7" items="${prodPokenmon }">
+            	<div class="col-md-3 d-flex justify-content-center">
+	                <div class="card p-2">
+	                    <a href="detail?idproduct=${pokemon.id }" style="text-decoration: none;color: black;">
+	                    <div class="text-center"> 
+	                    	<img src="./images/user/${pokemon.images }" class="img-fluid"/> 
+	                   	</div>
+	                    <div class="content">
+	                
+		                        <div class="d-flex justify-content-between align-items-center"> 
+		                        	<div class="row">
+		                        		<div class="col-md-8">
+		                            		<span class="category">${pokemon.nameProduct }</span> 
+		                        		</div>
+		                        		<div class="col-md-4">
+				                            <span class="price">
+												<fmt:formatNumber value="${pokemon.price}" pattern="#,##0 VNĐ"/>
+											</span> 
+		                        		</div>
+		                        	</div>
+		                        </div>
+		                        <p>${pokemon.characterName }</p> 
+	                        </a>
+	                        <div class="buttons d-flex justify-content-center"> 
+								
+								<c:set var="isLiked" value="false" />
+								<c:forEach var="like" items="${checkLike}">
+								    <c:if test="${like.maSP eq pokemon.id}">
+								        <c:set var="isLiked" value="true" />
+								    </c:if>
+								</c:forEach>
+								
+								<c:choose>
+								    <c:when test="${isLiked}">
+								        <!-- Nếu product.id có trong danh sách checkLike -->
+								        <a href="favorite-delete?idproduct=${pokemon.id}" style="color: red;" class="btn btn-heart"><i class="fas fa-heart"></i></i></a>
+								    </c:when>
+								    <c:otherwise>
+								        <!-- Nếu product.id không có trong danh sách checkLike -->
+								        <a href="favorite-insert?product=${pokemon.id}" class="btn btn-heart"><i class="fas fa-heart"></i></i></a>
+								    </c:otherwise>
+								</c:choose>	                            
+ 
+	                            <a href="invoices?product=${pokemon.id }" class="btn btn-outline-danger mr-1">Mua ngay</a> 
+	                            <a href="cart-insert?product=${pokemon.id }" class="btn btn-shopping-cart")"><i class="fas fa-shopping-cart"></i></a> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
