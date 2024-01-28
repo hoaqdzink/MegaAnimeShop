@@ -32,4 +32,21 @@ public class SttOrderDao extends AbstractEntityDao<SttOder>{
 		}
 		return list;
 	}
+	
+	public List<SttOder> orderStatus(String status){
+		String jpql ="SELECT s FROM SttOder s WHERE s.statuss = :status";
+		EntityManager em = JpaUtils.getEntityManager();
+		List<SttOder> list = null;
+		try {
+			TypedQuery<SttOder> query = em.createQuery(jpql, SttOder.class);
+			query.setParameter("status", status);
+			list = query.getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			em.close();
+		}
+		return list;
+	}
 }

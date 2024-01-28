@@ -31,6 +31,12 @@ public class PageInfo {
         pageRoute.put(PageType.ADMIN_USERS_PAGE, new PageInfo("User Admin", "./css/admin/adUser.css", "/layout/admin/_user.jsp"));
         pageRoute.put(PageType.ADMIN_LIST_USER_PAGE, new PageInfo("Danh sách tài khoản", "#", "/layout/admin/_tableUsers.jsp"));
         pageRoute.put(PageType.ADMIN_ROLE_USER_PAGE, new PageInfo("Danh sách các chức vụ", "#", "/layout/admin/_role.jsp"));
+        pageRoute.put(PageType.ADMIN_ALL_ORDER_PAGE, new PageInfo("Danh sách các đơn hàng", "#", "/layout/admin/_allOrder.jsp"));
+        pageRoute.put(PageType.ADMIN_APPROVER_ORDER_PAGE, new PageInfo("Đơn hàng chờ duyệt", "#", "/layout/admin/_approverOrder.jsp"));
+        pageRoute.put(PageType.ADMIN_HANDLE_ORDER_PAGE, new PageInfo("Đơn hàng cần xử lý", "#", "/layout/admin/_handleOrder.jsp"));
+        pageRoute.put(PageType.ADMIN_DELIVERING_ORDER_PAGE, new PageInfo("Đơn hàng đang giao", "#", "/layout/admin/_delivering.jsp"));
+        pageRoute.put(PageType.ADMIN_RECEIVED_ORDER_PAGE, new PageInfo("Đơn hàng đã giao", "#", "/layout/admin/_received.jsp"));
+        pageRoute.put(PageType.ADMIN_RECOVERY_ORDER_PAGE, new PageInfo("Đơn hàng đã hủy", "#", "/layout/admin/_recoveryOrder.jsp"));
     }
 
     // Chuẩn bị và chuyển hướng đến trang

@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="table-product p-4">
-	<jsp:include page="/layout/message/inform.jsp"></jsp:include>
 	<h1>Danh sách Tài Khoản</h1>
 	<jsp:include page="/layout/message/inform.jsp"></jsp:include>
 	<table class="table table-striped table-hover">

@@ -89,22 +89,22 @@
                         </a>
                         <ul id="order" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"> Tất cả đơn hàng</a>
+                                <a href="admin/all-orders?page=1" class="sidebar-link"> Tất cả đơn hàng</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"> Chờ duyệt</a>
+                                <a href="admin/approver-order" class="sidebar-link"> Chờ duyệt</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"> Đang xử lý</a>
+                                <a href="admin/handle-order" class="sidebar-link"> Đang xử lý</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"> Đang Giao</a>
+                                <a href="admin/delivering-order" class="sidebar-link"> Đang Giao</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"> Đã Giao</a>
+                                <a href="admin/received-order" class="sidebar-link"> Đã Giao</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"> Đã Hủy</a>
+                                <a href="admin/recovery-order" class="sidebar-link"> Đã Hủy</a>
                             </li>
                         </ul>
                     </li>
