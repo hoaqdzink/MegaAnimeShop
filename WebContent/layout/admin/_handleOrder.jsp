@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!-- Xử lý đơn hàng -->
 <div class="p-4 handle-order">
-	<h3>Các đơn hàng cần xử lý</h1>
+	<h3>Các đơn hàng cần xử lý</h3>
 	<jsp:include page="/layout/message/inform.jsp"></jsp:include>
 	<table class="table table-hover table table-striped container">
         <thead>
@@ -42,7 +42,7 @@
             <td>${order.statuss }</td>
             <td>${order.user.username }</td>
             <td>
-              <a href="#" class="btn btn-outline-success"><i class="fas fa-truck"></i> Vận chuyển</a> | 
+              <a href="admin/handle-order?idOrder=${order.id }" class="btn btn-outline-success"><i class="fas fa-truck"></i> Vận chuyển</a> | 
               <a href="#" class="btn btn-outline-danger"><i class="fas fa-times"></i> Hủy</a>
             </td>
             <td>

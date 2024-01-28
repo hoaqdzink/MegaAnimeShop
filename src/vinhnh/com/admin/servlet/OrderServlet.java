@@ -45,6 +45,7 @@ public class OrderServlet extends HttpServlet {
 			return;
 		}else if(url.contains("handle-order")) {
 			handleOrder(request, response);
+			updateVanChuyen(request, response);
 			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_HANDLE_ORDER_PAGE);
 			return;
 		}else if(url.contains("delivering-order")) {
@@ -145,5 +146,25 @@ public class OrderServlet extends HttpServlet {
 		List<SttOder> orderList = orderDao.orderStatus(stt);
 		
 		request.setAttribute("orderList", orderList);
+	}
+	
+	//Xử lý đơn hàng vận chuyển
+	protected void updateVanChuyen(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SttOrderDao orderDao = new SttOrderDao();
+		String idOrder = request.getParameter("idOrder");
+		if(idOrder == null) {
+			handleOrder(request, response);
+		}else {
+
+			int orderId = Integer.parseInt(idOrder);
+			
+			SttOder sttOder = orderDao.findById(orderId);
+			
+			sttOder.setStatuss("Đang giao");
+			orderDao.update(sttOder);
+			
+			handleOrder(request, response);
+			request.setAttribute("message", "Đơn hàng " + sttOder.getId() + " đã được giao hàng!");
+		}
 	}
 }
