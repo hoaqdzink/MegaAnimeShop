@@ -1,6 +1,7 @@
 package vinhnh.com.servlet;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import vinhnh.com.common.PageType;
 import vinhnh.com.common.SessionUtils;
 import vinhnh.com.dao.ProductDao;
 import vinhnh.com.dao.UserDao;
+import vinhnh.com.domain.SellingProduct;
 import vinhnh.com.model.Product;
 import vinhnh.com.model.User;
 
@@ -36,6 +38,7 @@ public class HomeServlet extends HttpServlet {
 		LoginServlet loginServlet = new LoginServlet();
 		loginServlet.requestSessionForUser(request, response);
 		if(url.contains("home")) {
+			selling(request, response);
 			productPokemon(request, response);
 			PageInfo.prepareAndForwardIndex(request, response, PageType.INDEX_HOME_PAGE);
 			return;
@@ -155,5 +158,21 @@ public class HomeServlet extends HttpServlet {
 		List<Product> searchList = dao.search(search);
 		
 		request.setAttribute("productList", searchList);
+	}
+	
+	protected void selling(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			ProductDao dao = new ProductDao();
+			List<SellingProduct> sellingProducts = dao.top8MostSoldProduct();
+			
+			for (SellingProduct product : sellingProducts) {
+			    System.out.println("Product ID: " + product.getId());
+			}
+			request.setAttribute("selling", sellingProducts);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 	}
 }

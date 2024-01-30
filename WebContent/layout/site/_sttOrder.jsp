@@ -25,7 +25,7 @@
         </thead>
         <tbody>
 	        <c:forEach var="order" items="${orderStt }">
-	        	<c:if test="${order.stt != 'Đã nhận' && order.stt != 'Hủy mua'}">
+	        	<c:if test="${order.stt != 'Đã giao' && order.stt != 'Hủy mua'}">
 		          <tr>
 		            <th scope="row">${order.maHD }</th>
 		            <td>${order.tenSP }</td>
@@ -35,8 +35,11 @@
 		            <td><fmt:formatNumber value="${order.tongTien}" pattern="#,##0 VNĐ"/></td>
 		            <td><fmt:formatDate value="${order.ngayDat}" pattern="dd-MM-yyyy"/></td>
 		            <td>${order.stt }</td>
-		            <td><span>${order.moTa }</span></td>
-		            <td><a href="cancel-sttOrder?id=${order.id }" class="btn btn-outline-danger" >Hủy mua</a></td>
+		            <td><span>${order.moTa }</span></td> 
+		            <td><c:if test="${order.stt eq 'Chờ duyệt'}">
+		            		<a href="cancel-sttOrder?id=${order.id }" class="btn btn-outline-danger" >Hủy mua</a>
+		            	</c:if>	
+		            </td>
 		          </tr>
 		         </c:if>
 	        </c:forEach>

@@ -45,154 +45,57 @@
             <h1>Sản phẩm <span>bán chạy</span></h1>
         </div>
         <div class="row g-2 bestsellerCard">
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card1.png" class="img-fluid"/> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card2.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card3.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card1.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card2.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card3.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card1.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 d-flex justify-content-center">
-                <div class="card p-2">
-                    <div class="text-center"> <img src="./images/site/card2.png" class="img-fluid"
-                            width="200" /> </div>
-                    <div class="content">
-                        <div class="d-flex justify-content-between align-items-center"> 
-                            <span class="category">Laptop</span> 
-                            <span class="price">$599</span> 
-                        </div>
-                        <p>Dell Astro 3044</p>
-                        <div class="buttons d-flex justify-content-center"> 
-                            <button class="btn btn-heart"><i class="fas fa-heart"></i></i></button> 
-                            <button class="btn btn-outline-danger mr-1">Mua ngay</button> 
-                            <button class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <c:forEach var="sell" items="${selling}">
+            	<div class="col-md-3 d-flex justify-content-center">
+	                <div class="card p-2">
+	                    <a href="detail?idproduct=${sell.id }" style="text-decoration: none;color: black;">
+	                    <div class="text-center"> 
+	                    	<img src="./images/user/${sell.image }" class="img-fluid"/> 
+	                   	</div>
+	                    <div class="content">
+	                
+		                        <div class="d-flex justify-content-between align-items-center"> 
+		                        	<div class="row">
+		                        		<div class="col-md-8">
+		                            		<span class="category">${sell.nameProduct }</span> 
+		                        		</div>
+		                        		<div class="col-md-4">
+				                            <span class="price">
+												<fmt:formatNumber value="${sell.price}" pattern="#,##0 VNĐ"/>
+											</span> 
+											<p>${sell.purchaseQuantity } lượt mua</p>
+		                        		</div>
+		                        	</div>
+		                        </div>
+		                        <p>${sell.characterName }</p> 
+	                        </a>
+	                        <div class="buttons d-flex justify-content-center"> 
+								
+								<c:set var="isLiked" value="false" />
+								<c:forEach var="like" items="${checkLike}">
+								    <c:if test="${like.maSP eq sell.id}">
+								        <c:set var="isLiked" value="true" />
+								    </c:if>
+								</c:forEach>
+								
+								<c:choose>
+								    <c:when test="${isLiked}">
+								        <!-- Nếu product.id có trong danh sách checkLike -->
+								        <a href="favorite-delete?idproduct=${sell.id}" style="color: red;" class="btn btn-heart"><i class="fas fa-heart"></i></a>
+								    </c:when>
+								    <c:otherwise>
+								        <!-- Nếu product.id không có trong danh sách checkLike -->
+								        <a href="favorite-insert?product=${sell.id}" class="btn btn-heart"><i class="fas fa-heart"></i></a>
+								    </c:otherwise>
+								</c:choose>	                            
+ 
+	                            <a href="invoices?product=${sell.id }" class="btn btn-outline-danger mr-1">Mua ngay</a> 
+	                            <a href="cart-insert?product=${sell.id }" class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></a> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
@@ -291,16 +194,16 @@
 								<c:choose>
 								    <c:when test="${isLiked}">
 								        <!-- Nếu product.id có trong danh sách checkLike -->
-								        <a href="favorite-delete?idproduct=${pokemon.id}" style="color: red;" class="btn btn-heart"><i class="fas fa-heart"></i></i></a>
+								        <a href="favorite-delete?idproduct=${pokemon.id}" style="color: red;" class="btn btn-heart"><i class="fas fa-heart"></i></a>
 								    </c:when>
 								    <c:otherwise>
 								        <!-- Nếu product.id không có trong danh sách checkLike -->
-								        <a href="favorite-insert?product=${pokemon.id}" class="btn btn-heart"><i class="fas fa-heart"></i></i></a>
+								        <a href="favorite-insert?product=${pokemon.id}" class="btn btn-heart"><i class="fas fa-heart"></i></a>
 								    </c:otherwise>
 								</c:choose>	                            
  
 	                            <a href="invoices?product=${pokemon.id }" class="btn btn-outline-danger mr-1">Mua ngay</a> 
-	                            <a href="cart-insert?product=${pokemon.id }" class="btn btn-shopping-cart")"><i class="fas fa-shopping-cart"></i></a> 
+	                            <a href="cart-insert?product=${pokemon.id }" class="btn btn-shopping-cart"><i class="fas fa-shopping-cart"></i></a> 
 	                        </div>
 	                    </div>
 	                </div>

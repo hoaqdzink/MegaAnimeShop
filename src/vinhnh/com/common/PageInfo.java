@@ -37,6 +37,8 @@ public class PageInfo {
         pageRoute.put(PageType.ADMIN_DELIVERING_ORDER_PAGE, new PageInfo("Đơn hàng đang giao", "#", "/layout/admin/_delivering.jsp"));
         pageRoute.put(PageType.ADMIN_RECEIVED_ORDER_PAGE, new PageInfo("Đơn hàng đã giao", "#", "/layout/admin/_received.jsp"));
         pageRoute.put(PageType.ADMIN_RECOVERY_ORDER_PAGE, new PageInfo("Đơn hàng đã hủy", "#", "/layout/admin/_recoveryOrder.jsp"));
+        pageRoute.put(PageType.ADMIN_DETAIL_ORDER_PAGE, new PageInfo("Chi tiết đơn hàng", "#", "/layout/admin/_detailOrder.jsp"));
+        pageRoute.put(PageType.ADMIN_STATISTICAL_PRODUCT_PAGE, new PageInfo("Thống kê các sản phẩm", "#", "/layout/admin/_sellingProduct.jsp"));
     }
 
     // Chuẩn bị và chuyển hướng đến trang

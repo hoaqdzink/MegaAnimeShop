@@ -18,7 +18,8 @@ import vinhnh.com.model.SttOder;
  * Servlet implementation class OrderServlet
  */
 @WebServlet({"/admin/all-orders","/admin/approver-order","/admin/handle-order",
-			"/admin/delivering-order","/admin/received-order","/admin/recovery-order"})
+			"/admin/delivering-order","/admin/received-order","/admin/recovery-order",
+			"/admin/detail-order"})
 public class OrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -49,6 +50,7 @@ public class OrderServlet extends HttpServlet {
 			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_HANDLE_ORDER_PAGE);
 			return;
 		}else if(url.contains("delivering-order")) {
+			updateVanChuyenThanhCong(request, response);
 			deliveringOrder(request, response);
 			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_DELIVERING_ORDER_PAGE);
 			return;
@@ -57,8 +59,13 @@ public class OrderServlet extends HttpServlet {
 			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_RECEIVED_ORDER_PAGE);
 			return;
 		}else if(url.contains("recovery-order")) {
+			phucHoiDonHang(request, response);
 			recpveryOrder(request, response);
 			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_RECOVERY_ORDER_PAGE);
+			return;
+		}else if(url.contains("detail-order")) {
+			orderDetail(request, response);
+			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_DETAIL_ORDER_PAGE);
 			return;
 		}
 		PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_ALL_ORDER_PAGE);
@@ -68,8 +75,9 @@ public class OrderServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		evenOrder(request, response);
+		orderDetail(request, response);
+		PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_DETAIL_ORDER_PAGE);
 	}
 	
 	//Hiểm thị tất cả các đơn hàng
@@ -142,7 +150,7 @@ public class OrderServlet extends HttpServlet {
 	//Hiểm thị danh sách các đơn hàng đã hủy
 	protected void recpveryOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SttOrderDao orderDao = new SttOrderDao();
-		String stt = "Đã hủy";
+		String stt = "Hủy mua";
 		List<SttOder> orderList = orderDao.orderStatus(stt);
 		
 		request.setAttribute("orderList", orderList);
@@ -155,16 +163,127 @@ public class OrderServlet extends HttpServlet {
 		if(idOrder == null) {
 			handleOrder(request, response);
 		}else {
-
-			int orderId = Integer.parseInt(idOrder);
+			try {
+				int orderId = Integer.parseInt(idOrder);
+				
+				SttOder sttOder = orderDao.findById(orderId);
+				
+				sttOder.setStatuss("Đang giao");
+				sttOder.setDescriptions("Đơn hàng đang được giao đến bạn");
+				orderDao.update(sttOder);
+				
+				handleOrder(request, response);
+				request.setAttribute("message", "Đơn hàng " + sttOder.getId() + " đã được giao hàng!");
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				request.setAttribute("error", "Vận chuyển không thành công!");
+			}
 			
-			SttOder sttOder = orderDao.findById(orderId);
+		}
+	}
+		
+	//Xử lý đơn hàng vận chuyển thành công
+	protected void updateVanChuyenThanhCong(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SttOrderDao orderDao = new SttOrderDao();
+		String idOrder = request.getParameter("idOrder");
+		if(idOrder == null) {
+			deliveringOrder(request, response);
+		}else {
+			try {
+				int orderId = Integer.parseInt(idOrder);
+				
+				SttOder sttOder = orderDao.findById(orderId);
+				
+				sttOder.setStatuss("Đã giao");
+				sttOder.setDescriptions("Đơn hàng đã giao thành công!");
+				orderDao.update(sttOder);
+				
+				deliveringOrder(request, response);
+				request.setAttribute("message", "Đơn hàng " + sttOder.getId() + " giao hàng thành công!");
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				request.setAttribute("error", "Vận chuyển không thành công!");
+			}
 			
-			sttOder.setStatuss("Đang giao");
-			orderDao.update(sttOder);
+		}
+	}
+	
+	//Xử lý đơn hàng phục hồi
+	protected void phucHoiDonHang(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SttOrderDao orderDao = new SttOrderDao();
+		String idOrder = request.getParameter("idOrder");
+		if(idOrder == null) {
+			recpveryOrder(request, response);
+		}else {
+			try {
+				int orderId = Integer.parseInt(idOrder);
+				
+				SttOder sttOder = orderDao.findById(orderId);
+				
+				sttOder.setStatuss("Đang xử lý");
+				sttOder.setDescriptions("Đơn hàng đang được chuẩn bị");
+				orderDao.update(sttOder);
+				
+				recpveryOrder(request, response);
+				request.setAttribute("message", "Đơn hàng " + sttOder.getId() + " đã được phục hồi! Được chuyển vào mục đang xử lý");
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				request.setAttribute("error", "Phục hồi không thành công vui lòng thử lại!");
+			}
 			
+		}
+	}
+	
+	//Hiểm thị chi tiết order
+	protected void orderDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SttOrderDao orderDao = new SttOrderDao();
+		String idOrder = request.getParameter("idOrder");
+		if(idOrder == null) {
 			handleOrder(request, response);
-			request.setAttribute("message", "Đơn hàng " + sttOder.getId() + " đã được giao hàng!");
+		}else {
+			try {
+				int orderId = Integer.parseInt(idOrder);
+				
+				SttOder sttOder = orderDao.findById(orderId);
+								
+				request.setAttribute("order", sttOder);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				request.setAttribute("error", "Không thể hiểm thị đơn hàng vui lòng thử lại!");
+			}
+			
+		}
+	}
+	
+	//xử lý chi tiết đơn hàng
+	protected void evenOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SttOrderDao orderDao = new SttOrderDao();
+		String idOrder = request.getParameter("idOrder");
+		String status = request.getParameter("statuss");
+		String descriptions = request.getParameter("descriptions");
+		if(idOrder == null) {
+			handleOrder(request, response);
+		}else {
+			try {
+				int orderId = Integer.parseInt(idOrder);
+				
+				SttOder sttOder = orderDao.findById(orderId);
+								
+				sttOder.setStatuss(status);
+				sttOder.setDescriptions(descriptions);
+				
+				orderDao.update(sttOder);
+				request.setAttribute("message", "Đơn hàng được cập nhật thành công");
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				request.setAttribute("error", "Không thể hiểm thị đơn hàng vui lòng thử lại!");
+			}
+			
 		}
 	}
 }

@@ -9,6 +9,7 @@
 	<table class="table table-striped table-hover">
 	  <thead>
 	    <tr>
+	      <th scope="col">#</th>
 	      <th scope="col">Mã HĐ</th>
 	      <th scope="col">Tên SP</th>
 	      <th scope="col">Mã SP</th>
@@ -24,6 +25,7 @@
 	  <tbody>
 	  <c:forEach var="order" items="${orderList }">
 	    <tr>
+	    	<th scope="row">${order.id}</th>
 	      <th scope="row">${order.invoice.id}</th>
 	      <td>${order.invoice.product.nameProduct }</td>
 	      <td>${order.invoice.product.id }</td>
@@ -43,7 +45,9 @@
 	      <td>
 	      	${order.user.username }
 	      </td>
-	      <td><i class="fas fa-info-circle"></i></td>
+	      <td>
+	      	<a href="admin/detail-order?idOrder=${order.id }"><i class="fas fa-info-circle"></i></a>
+	      </td>
 	    </tr>
 	  
 	  </c:forEach>

@@ -9,6 +9,7 @@
 	<table class="table table-hover table table-striped container">
        <thead>
          <tr>
+           <th scope="col">#</th>
            <th scope="col">Mã HĐ</th>
            <th scope="col">Ảnh</th>
            <th scope="col">Mã SP</th>
@@ -24,6 +25,7 @@
        <tbody>
        <c:forEach var="order" items="${orderList }">
          <tr>
+         	<th scope="row">${order.id}</th>
            <th scope="row">${order.invoice.id}</th>
            <td>
            		<img alt="Chờ duyệt" src="./images/user/${order.invoice.product.images }" style="width: 100px; height: 150px" class="img-fluid"/>
@@ -38,7 +40,7 @@
            <td>${order.statuss }</td>
            <td>${order.user.username }</td>
            <td>
-             <a href="#"><i class="fas fa-info-circle"></i></a>
+             <a href="admin/detail-order?idOrder=${order.id }"><i class="fas fa-info-circle"></i></a>
            </td>
          </tr>
         </c:forEach>

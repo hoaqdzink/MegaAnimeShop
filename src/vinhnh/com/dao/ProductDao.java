@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import vinhnh.com.domain.SellingProduct;
 import vinhnh.com.model.Product;
 
 public class ProductDao extends AbstractEntityDao<Product>{
@@ -122,6 +123,26 @@ public class ProductDao extends AbstractEntityDao<Product>{
 	    }
 	    return list;
 	}
+	
+	public List<SellingProduct> top8MostSoldProduct(){
+		String jpql = "SELECT new vinhnh.com.domain.SellingProduct(p.id, p.characterName, p.nameProduct, p.price, p.images, COUNT(i.id)) "
+		        + "FROM Product p JOIN p.invoices i "
+		        + "GROUP BY p.id, p.characterName, p.nameProduct, p.price, p.images "
+		        + "ORDER BY COUNT(i.id) DESC";
 
+		EntityManager em = JpaUtils.getEntityManager();
+	    List<SellingProduct> list = null;
+	    try {
+	    	TypedQuery<SellingProduct> query = em.createQuery(jpql, SellingProduct.class);
+	    	query.setMaxResults(8);
+	    	list = query.getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			em.close();
+		}
+	    return list;
+	}
 
 }

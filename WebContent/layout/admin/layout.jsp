@@ -17,6 +17,10 @@
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/admin/admin.css">
     <link rel="stylesheet" href="${page.cssUrl }">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    	<jsp:include page="/js/${linkScript}"></jsp:include>
+    </script>
 </head>
 
 <body>
@@ -44,7 +48,7 @@
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 1</a>
+                                <a href="admin/top5-best-selling-product" class="sidebar-link">Thống kê sản phẩm</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">Page 2</a>
