@@ -6,10 +6,10 @@
 
 <div class="row p-4">
 	<div class="col-md-6">
-		<div id="top5SellingProduct" style="width: 500px; height: 300px;"></div>
+		<div id="top5SellingProduct" style="width: 600px; height: 300px;"></div>
 	</div>
 	
 	<div class="col-md-6">
-		<div id="top5SellingProduct" style="width: 500px; height: 300px;"></div>
+		<div id="top5MostPurchasedMegaAnimes" style="width: 600px; height: 300px;"></div>
 	</div>
 </div>

@@ -2,9 +2,6 @@ package vinhnh.com.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 
 import vinhnh.com.model.Invoice;
 

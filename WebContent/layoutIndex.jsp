@@ -55,11 +55,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Liên hệ</a>
+                            <a class="nav-link" href="https://www.facebook.com/hoaqdzink23?mibextid=ZbWKwL">Liên hệ</a>
                         </li>
+                        <c:if test="${isLogin}">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Đánh giá chất lượng</a>
+                            <a class="nav-link" href="history-order">Lịch sử mua hàng</a>
                         </li>
+                        </c:if>
                     </ul>
                     <form class="d-flex" method="post">
                         <input class="form-control me-2" type="search" name="search" placeholder="Tìm kiếm sản phẩm"
@@ -126,9 +128,9 @@
                         Về chúng tôi
                     </h6>
                     <ul>
-                        <li><a href="#">Về chúng tôi</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                        <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                        <li><a href="home">Về chúng tôi</a></li>
+                        <li><a href="https://www.facebook.com/hoaqdzink23?mibextid=ZbWKwL">Liên hệ</a></li>
+                        <li><a href="home">Chính sách bảo mật thông tin</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mt-4">

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <div class="container-fluid">
     <div class="mb-3">
-        <h4>Admin Dashboard</h4>
+        <h4>Page Dành Cho Quản Trị Viên</h4>
     </div>
     <div class="row">
         <div class="col-12 col-md-6 d-flex">
@@ -10,13 +13,11 @@
                     <div class="row g-0 w-100">
                         <div class="col-6">
                             <div class="p-3 m-1">
-                                <h4>Welcome Back, Admin</h4>
-                                <p class="mb-0">Admin Dashboard, CodzSword</p>
+                                <h4>Xin Chào, ${name}</h4>
                             </div>
                         </div>
                         <div class="col-6 align-self-end text-end">
-                            <img src="./images/customer-support.jpg" class="img-fluid illustration-img"
-                                alt="">
+                            <img src="./images/user/${avatar }" class="img-fluid illustration-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -28,17 +29,17 @@
                     <div class="d-flex align-items-start">
                         <div class="flex-grow-1">
                             <h4 class="mb-2">
-                                $ 78.00
+                                 <fmt:formatNumber value="${totalPrice}" type="number" pattern="#,##0 VNĐ"/>
                             </h4>
                             <p class="mb-2">
-                                Total Earnings
+                                Tổng tiền bán được
                             </p>
                             <div class="mb-0">
                                 <span class="badge text-success me-2">
-                                    +9.0%
+                                   <fmt:formatNumber value="${totalMonth}" type="number" pattern="#,##0 VNĐ"/>
                                 </span>
                                 <span class="text-muted">
-                                    Since Last Month
+                                    Tiền bán được trong tháng
                                 </span>
                             </div>
                         </div>
@@ -49,45 +50,14 @@
     </div>
     <!-- Table Element -->
     <div class="card border-0">
-        <div class="card-header">
-            <h5 class="card-title">
-                Basic Table
-            </h5>
-            <h6 class="card-subtitle text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ducimus,
-                necessitatibus reprehenderit itaque!
-            </h6>
+        <div class="row">
+        	<div class="col-md-6">
+        		<div id="top5SellingProduct" style="width: 600px; height: 300px;"></div>
+        	</div>
+        	<div class="col-md-6">
+        		<div id="top5MostPurchasedMegaAnimes" style="width: 600px; height: 300px;"></div>
+        	</div>
         </div>
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+       
     </div>
 </div>

@@ -8,7 +8,7 @@
    <div class="introduceText text-center">
        <h1>Mage <span>ANIME</span></h1>
    </div>
-   <div class="introducePoke container">
+   <div class="introducePoke container" id="introducePoke">
    	
        <div class="row">
            <div class="col-md-4" style="margin-left: 50px;">

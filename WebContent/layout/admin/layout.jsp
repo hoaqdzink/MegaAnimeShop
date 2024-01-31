@@ -48,10 +48,13 @@
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="admin/top5-best-selling-product" class="sidebar-link">Thống kê sản phẩm</a>
+                                <a href="admin/statiscal-product" class="sidebar-link">Thống kê sản phẩm</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 2</a>
+                                <a href="admin/products-soil-in-month" class="sidebar-link">Sản phẩm bán được</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="admin/status-order" class="sidebar-link">Trạng thái các đơn hàng</a>
                             </li>
                         </ul>
                     </li>
@@ -112,29 +115,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidebar-header">
-                        Multi Level Menu
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#multi" data-bs-toggle="collapse"
-                            aria-expanded="false"><i class="fa-solid fa-share-nodes pe-2"></i>
-                            Multi Dropdown
-                        </a>
-                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link collapsed" data-bs-target="#level-1"
-                                    data-bs-toggle="collapse" aria-expanded="false">Level 1</a>
-                                <ul id="level-1" class="sidebar-dropdown list-unstyled collapse">
-                                    <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.1</a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </aside>
@@ -151,8 +131,8 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                             	<h6 class="text-center p-2" style="color: red; font-weight: bold;">${name}</h6>
-                                <a href="#" class="dropdown-item">Profile</a>
-                                <a href="#" class="dropdown-item">Setting</a>
+                                <a href="change-information" class="dropdown-item">Profile</a>
+                                <a href="home" class="dropdown-item">Home</a>
                                 <a href="logout" class="dropdown-item">Logout</a>
                             </div>
                         </li>
@@ -172,7 +152,7 @@
                     <div class="row text-muted">
                         <div class="col-6 text-start">
                             <p class="mb-0">
-                                <a href="#" class="text-muted">
+                                <a href="home" class="text-muted">
                                     <strong>Mega Shop</strong>
                                 </a>
                             </p>

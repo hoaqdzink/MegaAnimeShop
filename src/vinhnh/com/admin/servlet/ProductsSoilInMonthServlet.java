@@ -12,20 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import vinhnh.com.common.PageInfo;
 import vinhnh.com.common.PageType;
 import vinhnh.com.dao.StatisticalDao;
-import vinhnh.com.domain.Top5BestSellingProducts;
-import vinhnh.com.domain.Top5MostPurchasedMegaAnime;
+import vinhnh.com.domain.ProductsSoilInMonths;
 
 /**
- * Servlet implementation class Top5BestSellingProductServlet
+ * Servlet implementation class ProductsSoilInMonthServlet
  */
-@WebServlet("/admin/statiscal-product")
-public class Top5BestSellingProductServlet extends HttpServlet {
+@WebServlet("/admin/products-soil-in-month")
+public class ProductsSoilInMonthServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Top5BestSellingProductServlet() {
+    public ProductsSoilInMonthServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,15 +33,18 @@ public class Top5BestSellingProductServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		StatisticalDao dao = new StatisticalDao();
-		List<Top5BestSellingProducts> bestSellingProducts = dao.top5BestSellingProduct();
-		
-		List<Top5MostPurchasedMegaAnime> purchasedMegaAnimes = dao.mostPurchasedMegaAnimes();
-		request.setAttribute("bestSelling", bestSellingProducts);
-		request.setAttribute("purchasedMegaAnimes", purchasedMegaAnimes);
-		request.setAttribute("linkScript", "top5spBanChay.jsp");
-		
-		PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_STATISTICAL_PRODUCT_PAGE);
+		try {
+
+			StatisticalDao dao = new StatisticalDao();
+			List<ProductsSoilInMonths> list = dao.productsSoilInMonths();
+			
+			request.setAttribute("productsInMonth", list);
+			request.setAttribute("linkScript", "ProductsSoidInMonths.jsp");
+			PageInfo.prepareAndForwardAdmin(request, response, PageType.ADMIN_STATISTICAL_PRODUCT_SOIL_IN_MONTH_PAGE);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 	/**
