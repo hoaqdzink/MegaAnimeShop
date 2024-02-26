@@ -40,6 +40,7 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//hiohi
 		String url = request.getRequestURL().toString();
 		//hiểm thị các thông tin cần thiết - begin
 		HomeServlet home = new HomeServlet();
